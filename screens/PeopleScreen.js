@@ -1,5 +1,4 @@
-import { Text, View,TouchableHighlight } from "react-native";
-import { ListItem } from 'react-native-elements'
+import { Text, View, TouchableNativeFeedback } from "react-native";
 import React from "react";
 
 
@@ -37,11 +36,11 @@ export class ParticipantCard extends React.Component {
   }
   render() {
     return (
-      <TouchableHighlight>
-        <View style={{ width: "80%", backgroundColor: "#CAECFF", height: "10%", borderRadius: 20, padding: 10 }} on>
+      <TouchableNativeFeedback>
+        <View style={{ width: "80%", backgroundColor: "#CAECFF", height: "10%", borderRadius: 20, padding: 10 }}>
           <Text>{this.props.name}</Text>
         </View>
-      </TouchableHighlight>
+      </TouchableNativeFeedback>
     );
   }
 }
