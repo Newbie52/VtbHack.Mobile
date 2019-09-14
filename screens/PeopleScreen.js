@@ -8,7 +8,7 @@ export class PeopleScreen extends React.Component {
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'stretch' }}>
         <LinearGradient colors={['#000000', '#154689']} start={[0, 0]} end={[1, 1]} style={styles.gradientContainer}>
           <Text style={styles.header}>Участники</Text>
-          <View style={{ height: "80%", marginTop:85, flex: 1, flexDirection: 'row', justifyContent: 'center', alignItems: 'stretch', color: '#FFFFFF', backgroundColor: '#FFFFFF' }}>
+          <View style={{ borderTopLeftRadius: 15, borderTopRightRadius: 15, height: "80%", marginTop:85, flex: 1, flexDirection: 'row', justifyContent: 'center', alignItems: 'stretch', color: '#FFFFFF', backgroundColor: '#FFFFFF' }}>
             <ParticipantList/>
           </View>
         </LinearGradient>
