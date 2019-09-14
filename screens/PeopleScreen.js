@@ -1,4 +1,4 @@
-import { Text, View, TouchableNativeFeedback } from "react-native";
+import { Text, View,ListView, TouchableNativeFeedback } from "react-native";
 import React from "react";
 
 
@@ -27,6 +27,19 @@ export class PeopleScreen extends React.Component {
   }
 }
 
+
+export class ParticipantList extends React.Component {
+  render() {
+    return (
+      <ListView>
+        <ParticipantCard name={'Джсон стетхем'}/>
+        <ParticipantCard name={'Иксмэль сталоне'}/>
+      </ListView>
+    )
+  }
+}
+
+
 export class ParticipantCard extends React.Component {
   constructor(props) {
     super(props);
@@ -34,10 +47,14 @@ export class ParticipantCard extends React.Component {
       selected: false
     };
   }
+  onClick() {
+    this.setState({ selected: !this.state.selected });
+  }
+
   render() {
     return (
-      <TouchableNativeFeedback>
-        <View style={{ width: "80%", backgroundColor: "#CAECFF", height: "10%", borderRadius: 20, padding: 10 }}>
+      <TouchableNativeFeedback onPress={() => this.onClick()}>
+        <View style={{ width: "80%", backgroundColor: this.state.selected?"#CAECFF":"#FFFFFF", height: "10%", borderRadius: 20, padding: 10 }}>
           <Text>{this.props.name}</Text>
         </View>
       </TouchableNativeFeedback>
