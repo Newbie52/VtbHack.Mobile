@@ -22,7 +22,7 @@ export class PeopleScreen extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <ParticipantCard name={'Джсон стетхем'}/>
+        <ParticipantCard name={'Джсон стетхем'} />
       </View>
     );
   }
@@ -37,9 +37,11 @@ export class ParticipantCard extends React.Component {
   }
   render() {
     return (
-      <View style={{ width: "80%", backgroundColor: "#CAECFF", height: "10%", borderRadius: 20, padding: 10 }} on>
-        <Text>{this.props.name}</Text>
-      </View>
+      <TouchableHighlight>
+        <View style={{ width: "80%", backgroundColor: "#CAECFF", height: "10%", borderRadius: 20, padding: 10 }} on>
+          <Text>{this.props.name}</Text>
+        </View>
+      </TouchableHighlight>
     );
   }
 }
