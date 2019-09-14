@@ -1,9 +1,9 @@
 {
   "devToolsPort": 19002,
   "expoServerPort": 19000,
-  "packagerPort": null,
-  "packagerPid": null,
+  "packagerPort": 19001,
+  "packagerPid": 8152,
   "expoServerNgrokUrl": "https://kx-nqx.anonymous.vtbhack-mobile.exp.direct",
   "packagerNgrokUrl": "https://packager.kx-nqx.anonymous.vtbhack-mobile.exp.direct",
-  "ngrokPid": 2412
+  "ngrokPid": 7648
 }

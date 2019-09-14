@@ -22,7 +22,7 @@ export class PeopleScreen extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <ParticipantCard />
+        <ParticipantCard name={'Джсон стетхем'}/>
       </View>
     );
   }
