@@ -1,16 +1,16 @@
 import { Text, View, ListView, TouchableNativeFeedback, StyleSheet } from "react-native";
 import React from "react";
-import {LinearGradient} from "expo-linear-gradient";
+import { LinearGradient } from "expo-linear-gradient";
 
 export class PeopleScreen extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'stretch' }}>
-        <LinearGradient colors={['#000000', '#154689']} start={[0,0]} end={[1,1]} style={styles.gradientContainer}>
+        <LinearGradient colors={['#000000', '#154689']} start={[0, 0]} end={[1, 1]} style={styles.gradientContainer}>
           <Text style={styles.header}>Участники</Text>
           <View style={{ flex: 1, justifyContent: 'center', alignItems: 'stretch', color: 'white' }}></View>
         </LinearGradient>
-        <ParticipantList/>
+        <ParticipantList />
       </View>
     );
   }
@@ -18,12 +18,21 @@ export class PeopleScreen extends React.Component {
 
 
 export class ParticipantList extends React.Component {
+  constructor() {
+    super();
+    const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
+    this.state = {
+      dataSource: ds.cloneWithRows(['Джсон стетхем', 'Иксмэль сталоне','Джсон стетхем','Джсон стетхем','Джсон стетхем','Джсон стетхем','Джсон стетхем','Джсон стетхем','Джсон стетхем','Джсон стетхем','Джсон стетхем','Джсон стетхем','Джсон стетхем','Джсон стетхем','Джсон стетхем','Джсон стетхем'])
+    }
+  };
   render() {
     return (
-      <View>
-        <ParticipantCard name={'Джсон стетхем'}/>
-        <ParticipantCard name={'Иксмэль сталоне'}/>
-      </View>
+      <ListView
+        dataSource={this.state.dataSource}
+        renderRow={
+          (rowData) =>
+            <ParticipantCard name={rowData} />}
+      />
     )
   }
 }
@@ -43,7 +52,7 @@ export class ParticipantCard extends React.Component {
   render() {
     return (
       <TouchableNativeFeedback onPress={() => this.onClick()}>
-        <View style={{ width: "80%", backgroundColor: this.state.selected?"#CAECFF":"#FFFFFF", height: "10%", borderRadius: 20, padding: 10 }}>
+        <View style={{ backgroundColor: this.state.selected ? "#CAECFF" : "#FFFFFF", height: 50, borderRadius: 20, padding: 10 }}>
           <Text>{this.props.name}</Text>
         </View>
       </TouchableNativeFeedback>
@@ -53,9 +62,9 @@ export class ParticipantCard extends React.Component {
 
 export const pos = {
   position: 'absolute',
-  top: 0, 
+  top: 0,
   alignItems: 'center',
-  justifyContent:'center'
+  justifyContent: 'center'
 }
 
 const styles = StyleSheet.create({
