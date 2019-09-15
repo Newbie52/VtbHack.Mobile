@@ -1,6 +1,5 @@
 import { Text, View, ListView, TouchableNativeFeedback, StyleSheet, Button, TouchableOpacity, Image} from "react-native";
 import React from "react";
-import { Text, View, ListView, TouchableNativeFeedback, StyleSheet, Button } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import {ParticipantList} from "../components/ParticipantList";
 

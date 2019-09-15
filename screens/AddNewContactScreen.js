@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {Button, Text, TextInput, View} from 'react-native';
+import {AsyncStorage} from 'react-native';
 
 export class AddNewContactScreen extends React.Component {
     constructor(props) {
@@ -14,8 +15,18 @@ export class AddNewContactScreen extends React.Component {
     }
 
     saveContact() {
-        //save contact to local memory
-        //navigate to contacts screen
+        _storeData = async () => {
+            try {
+                var contacts = await AsyncStorage.getItem("Contacts");
+                if(contacts==null)
+                {
+                    contacts="";
+                }
+              await AsyncStorage.setItem("Contacts", contacts+";"+this.state.name+":"+this.state.address);
+            } catch (error) {
+              // Error saving data
+            }
+          };
     }
 
     render() {
