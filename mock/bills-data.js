@@ -69,10 +69,38 @@ export const billsMock = [
   },
 ];
 
-export const billMock =
+export const invoicesMock = [
   {
-    name: 'LL Pation',
-    address: 'ул. Летниковаская 2',
-    sum: 758,
-    isDivided: false
-  };
+    username: 'Андрей',
+    money: '458 руб',
+    status: 0
+  },
+  {
+    username: 'Максим',
+    money: '250 руб',
+    status: 1
+  },
+  {
+    username: 'Егор',
+    money: '500 руб',
+    status: 0
+  },
+  {
+    username: 'Виктория',
+    money: '150 руб',
+    status: 0
+  },
+  {
+    username: 'Илья',
+    money: '600 руб',
+    status: 0
+  }
+];
+
+export const billMock =
+{
+  name: 'LL Pation',
+  address: 'ул. Летниковаская 2',
+  sum: 758,
+  isDivided: false
+};

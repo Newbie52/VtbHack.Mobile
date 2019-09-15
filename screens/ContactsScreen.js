@@ -1,7 +1,7 @@
-import { Text, View, ListView, TouchableNativeFeedback, StyleSheet, Button, TouchableOpacity, Image} from "react-native";
+import { Text, View, ListView, TouchableNativeFeedback, StyleSheet, Button, TouchableOpacity, Image } from "react-native";
 import React from "react";
 import { LinearGradient } from "expo-linear-gradient";
-import {ParticipantList} from "../components/ParticipantList";
+import { ParticipantList } from "../components/ParticipantList";
 
 export class ContactsScreen extends React.Component {
   render() {
@@ -10,7 +10,7 @@ export class ContactsScreen extends React.Component {
         <LinearGradient colors={['#000000', '#154689']} start={[0, 0]} end={[1, 1]} style={styles.gradientContainer}>
           <Text style={styles.header}>Контакты</Text>
           <View style={{
-            height: "60%", 
+            height: "60%",
             marginTop: 25,
             marginBottom: 40,
             flex: 0.8,
@@ -24,8 +24,8 @@ export class ContactsScreen extends React.Component {
           </View>
           <View style={styles.addContactRow}>
             <Text style={styles.addContactText}>Добавить контакт</Text>
-            <TouchableOpacity style={{flex: 0.4, marginRight:30}} onPress={() => { this.props.navigation.navigate('AddNewContact') }}>
-              <Image source={require('./img/add-contact-button.png')}/>
+            <TouchableOpacity style={{ flex: 0.4, marginRight: 30 }} onPress={() => { this.props.navigation.navigate('AddNewContact') }}>
+              <Image source={require('./img/add-contact-button.png')} />
             </TouchableOpacity>
           </View>
         </LinearGradient>
@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
   },
   addContactText: {
     flex: 0.6,
-    marginLeft:'10%',
+    marginLeft: '10%',
     // position: 'absolute',
     // width: 121,
     // height: 31,

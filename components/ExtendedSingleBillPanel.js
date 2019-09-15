@@ -1,5 +1,9 @@
-import { StyleSheet, Text, TouchableNativeFeedback, View } from "react-native";
+import { StyleSheet, Text, View, ScrollView} from "react-native";
 import React from "react";
+import {invoicesMock} from "../mock/bills-data";
+import { InvoicePanel } from "./InvoicePanel";
+
+const invoices = invoicesMock;
 
 export class ExtendedSingleBillPanel extends React.Component {
 
@@ -10,7 +14,7 @@ export class ExtendedSingleBillPanel extends React.Component {
             <View style={styles.panel}>
                 <Text style={styles.placeName}>{bill.name}</Text>
                 <Text style={styles.address}>{bill.address}</Text>
-                <View style={{flex:1, flexDirection:'column'}}>
+                <View style={{ flex: 1, flexDirection: 'column' }}>
                     <View style={styles.sumBlock}>
                         <Text style={styles.sum}>Сумма</Text>
                         <Text style={styles.sum}>{bill.sum}р</Text>
@@ -21,12 +25,24 @@ export class ExtendedSingleBillPanel extends React.Component {
                         borderBottomWidth: 1,
                     }} />
                 </View>
+
+                <ScrollView style={styles.scrollView}>
+                    {invoices.map((item, key) => (
+                        <View style={{ marginBottom: 10 }} key={key}>
+                            <InvoicePanel invoice={item} />
+                        </View>
+                    ))}
+                </ScrollView>
             </View>
         );
     }
 }
 
 const styles = StyleSheet.create({
+    scrollView: {
+        marginTop: 20,
+        paddingHorizontal: 20
+    },
     panel: {
         height: '90%',
         backgroundColor: '#FFFFFF',
