@@ -1,19 +1,9 @@
 {
-<<<<<<< Updated upstream
-  "expoServerPort": 19000,
-  "expoServerNgrokUrl": "https://ff-vpv.anonymous.vtbhack-mobile.exp.direct",
-  "packagerNgrokUrl": "https://packager.ff-vpv.anonymous.vtbhack-mobile.exp.direct",
-  "ngrokPid": 23381,
   "devToolsPort": 19002,
-  "packagerPort": 19001,
-  "packagerPid": 23357
-=======
-  "devToolsPort": 19003,
   "expoServerPort": 19000,
-  "packagerPort": 19001,
-  "packagerPid": 17248,
-  "expoServerNgrokUrl": "https://6z-2wh.anonymous.vtbhack-mobile.exp.direct",
-  "packagerNgrokUrl": "https://packager.6z-2wh.anonymous.vtbhack-mobile.exp.direct",
-  "ngrokPid": 6332
->>>>>>> Stashed changes
+  "packagerPort": null,
+  "packagerPid": null,
+  "expoServerNgrokUrl": "https://ud-pgt.anonymous.vtbhack-mobile.exp.direct",
+  "packagerNgrokUrl": "https://packager.ud-pgt.anonymous.vtbhack-mobile.exp.direct",
+  "ngrokPid": 5956
 }
