@@ -5,6 +5,7 @@ import {SplitScreen} from "../screens/SplitScreen";
 import { AddNewContactScreen} from "../screens/AddNewContactScreen";
 import {ScanQrContactScreen } from "../screens/ScanQrContactScreen"
 import { ContactsScreen } from '../screens/ContactsScreen';
+import { InvoiceScreen } from '../screens/InvoiceScreen';
 
 const BillAddingModuleNavigator = createStackNavigator({
   Qr: {
@@ -20,6 +21,13 @@ const BillAddingModuleNavigator = createStackNavigator({
     },
     screen: PeopleScreen
   },
+  EventInfo: {
+    navigationOptions: {
+      header: null
+    },
+    screen: InvoiceScreen
+  },
+  
   Contacts: {
     navigationOptions: {
       header: null
