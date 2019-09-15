@@ -4291,6 +4291,14 @@ expo-asset@~6.0.0:
     path-browserify "^1.0.0"
     url-parse "^1.4.4"
 
+expo-barcode-scanner@~6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/expo-barcode-scanner/-/expo-barcode-scanner-6.0.0.tgz#ea9c907dbb403247bfe9fa4da8f50b0d05ef6e2a"
+  integrity sha512-BEAEqus5hBpcippY+/xWIM/UIWHMyAzZTwISkKovVDtiJ47bcz6Bq9nrLwFv7vjTG68Sww2e7/K8jdCc9nndyQ==
+  dependencies:
+    lodash "^4.6.0"
+    prop-types "^15.6.0"
+
 expo-cli@^3.0.10:
   version "3.0.10"
   resolved "https://registry.yarnpkg.com/expo-cli/-/expo-cli-3.0.10.tgz#121c290f666d232b51d7b78540c3b4e59889d973"
@@ -4347,7 +4355,7 @@ expo-cli@^3.0.10:
     "@expo/traveling-fastlane-darwin" "1.9.11"
     "@expo/traveling-fastlane-linux" "1.9.11"
 
-expo-constants@~6.0.0:
+expo-constants@latest, expo-constants@~6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/expo-constants/-/expo-constants-6.0.0.tgz#ff4598985ba006e24949be3f05be7429e5bedacf"
   integrity sha512-O0yL3Ok0YUEWpAqsWjOdgFD/lMfg8PUGH/nq31CZ1s7cuFUlksD42i5YhIRlb0Pa/btK8X9LpfY3eWhx9eTmbg==
@@ -4385,7 +4393,7 @@ expo-location@~6.0.0:
   dependencies:
     invariant "^2.2.4"
 
-expo-permissions@~6.0.0:
+expo-permissions@latest, expo-permissions@~6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/expo-permissions/-/expo-permissions-6.0.0.tgz#2943f1aa98de833b88cea73cf03d18d08957cb68"
   integrity sha512-O+RdyfGiq7i+5Vi9fE38DgKn436lNWiqhnS5/Z7CC00bmKahhjVMNDbZvNn/nrdRGyaPneJk1Co1s1sexSnv0A==
@@ -9380,6 +9388,13 @@ react-native-web@^0.11.4:
     ws "^1.1.5"
     xmldoc "^0.4.0"
     yargs "^9.0.0"
+
+react-navigation-stack@^1.7.3:
+  version "1.7.3"
+  resolved "https://registry.yarnpkg.com/react-navigation-stack/-/react-navigation-stack-1.7.3.tgz#2dce28bdc80bbd2bf09755a6aa7200055a907504"
+  integrity sha512-wOt7T5NkIFInnFw+cxkUHUbNrXbPqascScia6azMWSdHhx+gvz3uW4Ubyw+2NULHcoshU53boUuQ8lUmUrJdhg==
+  dependencies:
+    prop-types "^15.7.2"
 
 react-navigation-tabs@^2.5.2:
   version "2.5.2"

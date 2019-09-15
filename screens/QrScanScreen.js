@@ -52,6 +52,9 @@ export default class QrScanScreen extends React.Component {
   handleBarCodeScanned = ({ type, data }) => {
     this.setState({ scanned: true });
     alert('QR-код успешно отсканирован');
-    sendQrData(data).then(res => console.log(res));
+    sendQrData(data).then(res => {
+      console.log(res);
+      this.props.navigation.navigate('People');
+    });
   };
 }
