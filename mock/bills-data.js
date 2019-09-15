@@ -86,15 +86,15 @@ export const invoicesMock = [
     status: 0
   },
   {
-    username: 'Виктория',
+    username: 'Вика',
     money: '150 руб',
     status: 0
   },
-  {
-    username: 'Илья',
-    money: '600 руб',
-    status: 0
-  }
+  // {
+  //   username: 'Илья',
+  //   money: '5 руб',
+  //   status: 0
+  // }
 ];
 
 export const billMock =

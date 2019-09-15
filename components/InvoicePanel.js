@@ -10,14 +10,14 @@ export class InvoicePanel extends React.Component {
         return (
             <View style={styles.panel}>
                 <View style={styles.sumBlock}>
-                    <View style={{ flex: 0.2, alignItems: 'center' }}>
+                    <View style={{ flex: 0.1, alignItems: 'center' }}>
                         <Avatar rounded activeOpacity={0.7} icon={{ name: 'user', type: 'font-awesome' }} size='medium' />
                     </View>
-                    <View style={{ flex: 0.5, flexDirection: 'column', marginLeft: '10%' }}>
+                    <View style={{ flex: 0.5, flexDirection: 'column', marginRight: 20 }}>
                         <Text style={styles.placeName}>{invoice.username}</Text>
                         <Text style={styles.placeMoney}>{invoice.money}</Text>
                     </View>
-                    <Image style={{ width: 20, height: 20 }} source={require('./resources/success-status.png')}/>
+                    <Image style={{ marginTop: 5, width: 20, height: 20 }} source={require('./resources/success-status.png')}/>
                 </View>
                 {/* <Text style={styles.address}>{invoice.money}</Text>
                 <Text style={styles.address}>{invoice.status}</Text>

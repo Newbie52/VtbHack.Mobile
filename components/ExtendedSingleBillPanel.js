@@ -1,6 +1,6 @@
-import { StyleSheet, Text, View, ScrollView} from "react-native";
+import { StyleSheet, Text, View, ScrollView } from "react-native";
 import React from "react";
-import {invoicesMock} from "../mock/bills-data";
+import { invoicesMock } from "../mock/bills-data";
 import { InvoicePanel } from "./InvoicePanel";
 
 const invoices = invoicesMock;
@@ -16,11 +16,12 @@ export class ExtendedSingleBillPanel extends React.Component {
                 <Text style={styles.address}>{bill.address}</Text>
                 <View style={{ flex: 1, flexDirection: 'column' }}>
                     <View style={styles.sumBlock}>
-                        <Text style={styles.sum}>Сумма</Text>
+                        <Text style={styles.sum}>Сумма:</Text>
                         <Text style={styles.sum}>{bill.sum}р</Text>
                     </View>
                     <View style={{
-                        flex: 0.01,
+                        paddingBottom: 30,
+                        flex: 0.03,
                         borderBottomColor: '#154689',
                         borderBottomWidth: 1,
                     }} />
@@ -40,7 +41,7 @@ export class ExtendedSingleBillPanel extends React.Component {
 
 const styles = StyleSheet.create({
     scrollView: {
-        marginTop: 20,
+        paddingTop: 20,
         paddingHorizontal: 20
     },
     panel: {
@@ -71,12 +72,13 @@ const styles = StyleSheet.create({
     sum: {
         fontFamily: 'Roboto',
         fontSize: 18,
-        lineHeight: 21,
+        lineHeight: 30,
         color: '#154689',
     },
     sumBlock: {
-        marginTop: 20,
-        flex: 0.05,
+        paddingTop: 10,
+        flex: 1,
+        height: '10%',
         flexDirection: 'row',
         justifyContent: 'space-between'
     }
