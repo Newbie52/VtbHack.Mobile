@@ -1,4 +1,4 @@
-import { Text, View, ListView, TouchableNativeFeedback, StyleSheet } from "react-native";
+import { Text, View, ListView, TouchableNativeFeedback, StyleSheet, Button } from "react-native";
 import React from "react";
 import { LinearGradient } from "expo-linear-gradient";
 
@@ -9,18 +9,22 @@ export class PeopleScreen extends React.Component {
         <LinearGradient colors={['#000000', '#154689']} start={[0, 0]} end={[1, 1]} style={styles.gradientContainer}>
           <Text style={styles.header}>Участники</Text>
           <View style={{ 
+            flex: 0.8,
             borderTopLeftRadius: 15,
             borderTopRightRadius: 15,
             height: "80%", 
-            marginTop:85,
+            marginTop: 85,
             flex: 1,
-            flexDirection: 'row',
             justifyContent: 'center',
             alignItems: 'stretch', 
             color: '#FFFFFF', 
             backgroundColor: '#FFFFFF',
             width: '100%' }}>
               <ParticipantList/>
+          </View>
+          <View style={styles.cancelAggreeFooter}>
+            <Button style={styles.buttonCancel} title='Отмена'></Button>
+            <Button style={styles.buttonOk} title='Готово'></Button>
           </View>
         </LinearGradient>
       </View>
@@ -93,6 +97,38 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     textAlign: 'center',
-  }
+  },
+  cancelAggreeFooter:{
+    flex: 0.1,
+    flexDirection:'row',
+    color: '#3F3F3F',
+    backgroundColor: '#3F3F3F',
+    borderTopLeftRadius: 15,
+    borderTopRightRadius: 15,
+    height: '10%',
+    marginTop: -30,
+    //top: 200,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%'
+  },
+  buttonCancel:{
+    backgroundColor:'#FFFFFF',
+    color:'#818181',
+    borderColor: '#45BCFF',
+    width: '10%',
+    marginLeft: 20,
+    marginRight: 10,
+    borderRadius:10,
+  },
+  buttonOk:{
+    backgroundColor:'#FFFFFF',
+    color:'#16ACB8',
+    borderColor: '#45BCFF',
+    width: '10%',
+    marginRight: 20,
+    marginLeft: 10,
+    borderRadius:10,
+  },
 });
 
