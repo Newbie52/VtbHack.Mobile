@@ -3,10 +3,15 @@ import { ListView, Text, View, CheckBox } from 'react-native';
 
 
 export class SplitScreen extends React.Component {
-  usersSelected = this.props.navigation.getParam('users', null);
-  billItems = this.props.navigation.getParam('billItems', null);
-  constructor() {
-    super();
+
+  // usersSelected = this.props.navigation.getParam('users', null);
+  // billItems = this.props.navigation.getParam('billItems', null);
+
+  constructor(props) {
+    super(props);
+
+    const usersSelected = this.props.navigation.getParam('users', null);
+    const billItems = this.props.navigation.getParam('billItems', null);
     
     const partDs = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
     const itemsDs = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
