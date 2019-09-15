@@ -11,7 +11,7 @@ export class ParticipantCard extends React.Component {
   }
 
   onClick() {
-    this.props.updateParent(this.props.id, !this.state.selected);
+    this.props.updateParent(this.props.id, !this.state.selected, this.props.name, this.props.address);
     this.setState({ selected: !this.state.selected });
   }
 

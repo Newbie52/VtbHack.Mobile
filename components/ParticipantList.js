@@ -1,24 +1,40 @@
 import React from "react";
 import {ListView} from "react-native";
 import {ParticipantCard} from "./ParticipantCard";
-
-const testUsers = ['Джсон стетхем', 'Иксмэль сталоне','Джсон стетхем','Джсон стетхем','Джсон стетхем','Джсон стетхем','Джсон стетхем','Джсон стетхем','Джсон стетхем','Джсон стетхем','Джсон стетхем','Джсон стетхем','Джсон стетхем','Джсон стетхем','Джсон стетхем','Джсон стетхем'];
+import {AsyncStorage} from 'react-native';
 
 export class ParticipantList extends React.Component {
-
+  ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
   constructor(props) {
     super(props);
-    const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
+    
     this.state = {
-      dataSource: ds.cloneWithRows(testUsers),
+      dataSource: this.ds.cloneWithRows([]),
       selectedUsers: []
     }
   };
 
-  changeParticipantSelection = (id, isSelected) => {
+  componentDidMount() {  
+    AsyncStorage.getItem("Contacts").then((val)=>{
+      var contacts =[];
+      if(val!=undefined||val!=null)
+      {
+        console.log(val);
+        var contactStr = val.split(";");
+        contactStr.forEach(contact => {
+          contacts.push({name:contact.split(":")[0], address:contact.split(":")[1]})
+        });
+      }
+      this.setState({dataSource:this.ds.cloneWithRows(contacts)});
+    });
+    
+    //var values = await AsyncStorage.getItem();
+}
+
+  changeParticipantSelection = (id, isSelected, name, address) => {
     let newUsers = this.state.selectedUsers ? this.state.selectedUsers  : [];
     if (isSelected) {
-      newUsers.push({id: id, isSelected: isSelected, name: testUsers[id]});
+      newUsers.push({id: id, isSelected: isSelected, name: name, address:address});
     } else {
       newUsers = newUsers.filter(user => id !== user.id)
     }
@@ -34,7 +50,7 @@ export class ParticipantList extends React.Component {
         dataSource={this.state.dataSource}
         renderRow={
           (rowData, _, rowId) =>
-            <ParticipantCard name={rowData} id={rowId} updateParent={this.changeParticipantSelection} />}
+            <ParticipantCard name={rowData.name} id={rowId} address={rowData.address} updateParent={this.changeParticipantSelection} />}
       />
     )
   }

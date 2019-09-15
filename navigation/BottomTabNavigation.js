@@ -5,6 +5,7 @@ import {PeopleScreen} from "../screens/PeopleScreen";
 import {ContactsScreen} from "../screens/ContactsScreen";
 import BillAddingModuleNavigator from "./BillAddingModuleNavigator";
 import {ManualSumScreen} from "../screens/ManualSumScreen";
+import {InvoiceScreen} from "../screens/InvoiceScreen";
 
 export const AppNavigator = createBottomTabNavigator({
   Bills: BillsScreen,
