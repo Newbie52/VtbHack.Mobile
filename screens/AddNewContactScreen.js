@@ -21,7 +21,7 @@ export class AddNewContactScreen extends React.Component {
     render() {
         return (
             <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-                <TextInput
+                <TextInput style={{ height: 40, width: 300}}
                     onChangeText={(text) => this.onChanged(text)}
                     value={this.state.name}
                 />
