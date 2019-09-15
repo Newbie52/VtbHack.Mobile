@@ -15,12 +15,12 @@ export function openSession() {
     return response.json().data;
   });
 }
-export function createInvoice(invoiceName, fpsid, payerAddress, recipientAddress, amount) {
+export function createInvoice(fpsid, payerAddress, recipientAddress, amount) {
   args = {
     "amount": amount,
     "currencyCode": 810,
     "description": "",
-    "number": invoiceName,
+    "number": uuidv4(),
     "payer": payerAddress,
     "recipient": recipientAddress
   }
@@ -39,10 +39,18 @@ export function createInvoice(invoiceName, fpsid, payerAddress, recipientAddress
 
 }
 
-export function GetInvoiceStatuses(fpsid, invoiceNumber, recipientAddress) {
+export function GetInvoiceStatus(fpsid, invoiceNumber, recipientAddress) {
   return fetch("http://89.208.84.235:31080/api/v1/invoice/810/" + invoiceNumber + "/" + recipientAddress, {
     headers: {
       'FPSID': fpsid,
     }
   }).then(res => res.json);
+}
+
+
+function uuidv4() {
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+    var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+    return v.toString(16);
+  });
 }

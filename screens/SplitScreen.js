@@ -1,6 +1,6 @@
 import React from "react";
-import {ListView, Text, View, CheckBox, Image, TouchableOpacity} from 'react-native';
-
+import { ListView, Text, View, CheckBox, Image, TouchableOpacity } from 'react-native';
+import { uuidv4 } from '../api/code-scanner'
 
 export class SplitScreen extends React.Component {
 
@@ -13,8 +13,8 @@ export class SplitScreen extends React.Component {
     const usersSelected = this.props.navigation.getParam('users', null);
     const billItems = this.props.navigation.getParam('billItems', null);
 
-    const products = billItems.map( (item, index) => {return {id: index, name: item.name, price: item.price, users: []}});
-    const users = usersSelected.map(user => { return {name: user.name, products: [], sum: 0}});
+    const products = billItems.map((item, index) => { return { id: index, name: item.name, price: item.price, users: [] } });
+    const users = usersSelected.map(user => { return { name: user.name, products: [], sum: 0 } });
 
     const partDs = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
     const itemsDs = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
@@ -57,21 +57,44 @@ export class SplitScreen extends React.Component {
     })
   };
 
+  submitEvent() {
+    try {
+      var events = await AsyncStorage.getItem("Events");
+      if (events == null) {
+        events = "[]";
+      }
+      var eventsArray = JSON.parse(events);
+      eventsArray.push(
+        {
+          id: uuidv4(),
+          name: 'Test name',
+          address: 'тест адрес',
+          sum: 123,
+          isDivided: false
+        });
+      await AsyncStorage.setItem("Events", JSON.stringify(eventsArray));
+      //добавить навигацию к списку ивентов
+    } catch (error) {
+      // Error saving data
+    }
+  }
+
+
   render() {
     return (
       <View style={{ paddingTop: 100, flex: 1, flexDirection: 'row' }}>
         <View style={{ flex: 2, paddingHorizontal: 15 }}>
-          { this.state.users.map( (user, index) =>
-          <TouchableOpacity onPress={() => this.setState({selectedUser: index})}
-                            style={this.getUserStyle(index)}>
-            <Text>{user.name}</Text>
-            <Text style={{fontWeight: 'bold'}}>Сумма: {user.sum}р</Text>
-          </TouchableOpacity>) }
+          {this.state.users.map((user, index) =>
+            <TouchableOpacity onPress={() => this.setState({ selectedUser: index })}
+              style={this.getUserStyle(index)}>
+              <Text>{user.name}</Text>
+              <Text style={{ fontWeight: 'bold' }}>Сумма: {user.sum}р</Text>
+            </TouchableOpacity>)}
         </View>
         <View style={{ flex: 4, paddingHorizontal: 15 }}>
-          { this.state.products.map((product) =>
-            <TouchableOpacity style={{ height: 30, flex: 1, flexDirection: 'row', justifyContent: 'space-between', marginBottom: 10, borderBottomWidth: 2, borderColor: 'blue'}}
-                              onPress={() => this.addProduct(product.id)}>
+          {this.state.products.map((product) =>
+            <TouchableOpacity style={{ height: 30, flex: 1, flexDirection: 'row', justifyContent: 'space-between', marginBottom: 10, borderBottomWidth: 2, borderColor: 'blue' }}
+              onPress={() => this.addProduct(product.id)}>
               <Text>{product.name}</Text>
               <Text>{product.price}</Text>
             </TouchableOpacity>
@@ -90,6 +113,6 @@ export class SplitScreen extends React.Component {
       }
     }
 
-    return {marginLeft: 20}
+    return { marginLeft: 20 }
   }
 }
