@@ -1,1 +1,9 @@
-{}
+{
+  "devToolsPort": 19002,
+  "expoServerPort": 19000,
+  "packagerPort": 19003,
+  "packagerPid": 667,
+  "expoServerNgrokUrl": "https://qd-qee.anonymous.vtbhack-mobile.exp.direct",
+  "packagerNgrokUrl": "https://packager.qd-qee.anonymous.vtbhack-mobile.exp.direct",
+  "ngrokPid": 704
+}

@@ -1,7 +1,7 @@
 import React from "react";
 import { Text, View, ListView, TouchableNativeFeedback, StyleSheet, Button } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import { ParticipantList } from "./PeopleScreen";
+import {ParticipantList} from "../components/ParticipantList";
 
 export class ContactsScreen extends React.Component {
   render() {
@@ -9,8 +9,7 @@ export class ContactsScreen extends React.Component {
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'stretch' }}>
         <LinearGradient colors={['#000000', '#154689']} start={[0, 0]} end={[1, 1]} style={styles.gradientContainer}>
           <Text style={styles.header}>Контакты</Text>
-          <View style={{ 
-            flex: 0.6,
+          <View style={{
             height: "60%", 
             marginTop: 25,
             marginBottom: 40,

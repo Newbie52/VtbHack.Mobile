@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button } from 'react-native';
+import {Button, Text, TextInput, View} from 'react-native';
 
 export class AddNewContactScreen extends React.Component {
     constructor(props) {
@@ -20,13 +20,13 @@ export class AddNewContactScreen extends React.Component {
 
     render() {
         return (
-            <View>
+            <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
                 <TextInput
                     onChangeText={(text) => this.onChanged(text)}
                     value={this.state.name}
                 />
                 <Text>{this.state.address}</Text>
-                <Button onPress={() => this.saveContact()}></Button>
+                <Button title='Добавить' onPress={() => this.saveContact()}></Button>
             </View>
         )
     }
