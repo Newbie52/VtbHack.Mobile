@@ -29,7 +29,7 @@ export class PeopleScreen extends React.Component {
           <View style={styles.cancelAggreeFooter}>
           <TouchableOpacity style={styles.buttonCancel} onPress={() => {  }}>
                 <Text style={{  alignSelf: 'center',
-                                color: '#81818',
+                                color: '#818181',
                                 fontSize: 18,
                                 fontWeight: 'normal',
                                 paddingTop:7
