@@ -22,7 +22,7 @@ export class ContactsScreen extends React.Component {
             width: '80%' }}>
               <ParticipantList/>
           </View>
-          <Text style={styles.addContactText}>Добавить контакт +</Text>
+          <Button style={styles.addContactText} title='Добавить контакт +' onPress={() => this.props.navigation.navigate('PeopleScreen')}></Button>
         </LinearGradient>
       </View>
     );
