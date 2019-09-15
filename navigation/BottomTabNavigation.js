@@ -7,5 +7,5 @@ import {PeopleScreen} from "../screens/PeopleScreen";
 export const TabNavigator = createBottomTabNavigator({
   Bills: BillsScreen,
   Circle: QrScanScreen,
-  People: PeopleScreen
+  People: ManualSplitScreen
 });

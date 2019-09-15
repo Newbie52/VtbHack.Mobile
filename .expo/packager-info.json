@@ -1,9 +1,9 @@
 {
-  "devToolsPort": 19003,
+  "devToolsPort": 19002,
   "expoServerPort": 19000,
   "packagerPort": 19001,
-  "packagerPid": 13460,
-  "expoServerNgrokUrl": "https://gt-aaq.anonymous.vtbhack-mobile.exp.direct",
-  "packagerNgrokUrl": "https://packager.gt-aaq.anonymous.vtbhack-mobile.exp.direct",
-  "ngrokPid": 10480
+  "packagerPid": 19076,
+  "expoServerNgrokUrl": "https://2i-tb6.anonymous.vtbhack-mobile.exp.direct",
+  "packagerNgrokUrl": "https://packager.2i-tb6.anonymous.vtbhack-mobile.exp.direct",
+  "ngrokPid": 17656
 }
