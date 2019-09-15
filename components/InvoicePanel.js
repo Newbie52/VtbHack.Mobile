@@ -14,8 +14,8 @@ export class InvoicePanel extends React.Component {
                         <Avatar rounded activeOpacity={0.7} icon={{ name: 'user', type: 'font-awesome' }} size='medium' />
                     </View>
                     <View style={{ flex: 0.5, flexDirection: 'column', marginRight: 20 }}>
-                        <Text style={styles.placeName}>{invoice.username}</Text>
-                        <Text style={styles.placeMoney}>{invoice.money}</Text>
+                        <Text style={styles.placeName}>{invoice.name}</Text>
+                        <Text style={styles.placeMoney}>{invoice.amount}</Text>
                     </View>
                     <Image style={{ marginTop: 5, width: 20, height: 20 }} source={require('./resources/success-status.png')}/>
                 </View>

@@ -4,9 +4,9 @@ import {LinearGradient} from "expo-linear-gradient";
 import {billMock} from "../mock/bills-data";
 import {ExtendedSingleBillPanel} from "../components/ExtendedSingleBillPanel";
 
-const bill = billMock;
 
 export class InvoiceScreen extends React.Component {
+
   render() {
 
     return (
@@ -15,7 +15,7 @@ export class InvoiceScreen extends React.Component {
             {/* <ScrollView style={styles.scrollView}>
               {  */}
                 <View style={{marginTop: 100, height: '90%'}}>
-                  <ExtendedSingleBillPanel style={{flex:0.9}} bill={bill}/>
+                  <ExtendedSingleBillPanel style={{flex:0.9}} bill={this.props.invoices}/>
                 </View>
          {/* }
             </ScrollView> */}
