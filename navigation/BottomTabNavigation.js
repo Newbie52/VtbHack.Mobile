@@ -5,9 +5,8 @@ import {PeopleScreen} from "../screens/PeopleScreen";
 import {ContactsScreen} from "../screens/ContactsScreen";
 import BillAddingModuleNavigator from "./BillAddingModuleNavigator";
 
-
 export const AppNavigator = createBottomTabNavigator({
   Bills: BillsScreen,
   Circle: BillAddingModuleNavigator,
-  Contacts: ContactsScreen
+  Contacts: ManualSumScreen
 });

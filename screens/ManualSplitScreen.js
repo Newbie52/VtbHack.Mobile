@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import { Text, View, ListView, TouchableNativeFeedback, StyleSheet, Button } from "react-native";
+import { Text, View, ListView, TouchableNativeFeedback, StyleSheet, Button, TextInput } from "react-native";
 
 export default class ManualSplitScreen extends Component {
     constructor(props) {
         super(props);
         this.state = {
             total: 0,
-            invoces=[]
+            invoces: []
         };
     }
 
@@ -23,12 +23,11 @@ export default class ManualSplitScreen extends Component {
     }
 }
 
-
 export class ParticipantManualCard extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            amount: 0,
+            amount: 250,
         };
     }
 
@@ -47,13 +46,28 @@ export class ParticipantManualCard extends Component {
     render() {
         return (
             <View>
-                <Text>{this.props.name}</Text>
-                <TextInput
-                    keyboardType='numeric'
-                    onChangeText={(text) => this.onChanged(text)}
-                    value={this.state.amount}
-                    maxLength={10}  //setting limit of input
-                />
+                {/* <Text>{this.props.name}</Text> */}
+                <View style={{ flexDirection: 'row' }}> 
+                    <Text style={{flex: 0.3, marginLeft: 20}}>Джейсон</Text>
+                    <View style={{ 
+                        flex: 0.7, 
+                        marginRight: 20,
+                        backgroundColor: "#FFFFFF",
+                        height: 50, 
+                        width: 210,
+                        borderRadius: 20, 
+                        borderWidth:1,
+                        borderColor: '#16ACB8',
+                        alignContent: 'center',
+                        justifyContent: 'center' }}>
+                        <TextInput
+                            keyboardType='numeric'
+                            onChangeText={(text) => this.onChanged(text)}
+                            value={this.state.amount}
+                            maxLength={10}  //setting limit of input
+                        />
+                    </View>
+                </View>
             </View>
         )
     }
