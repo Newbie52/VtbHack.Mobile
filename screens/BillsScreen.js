@@ -12,6 +12,7 @@ export class BillsScreen extends React.Component {
     return (
         <View style={{flex: 1, alignItems: 'stretch'}}>
           <LinearGradient colors={['#000000', '#154689']} start={[0,0]} end={[1,1]} style={styles.gradientContainer}>
+            <Text style={styles.headerText}>События</Text>
             <ScrollView style={styles.scrollView}>
               { bills.map((item, key) => (
                 <View style={{marginBottom: 10}} key={key}>
