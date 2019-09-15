@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, TouchableNativeFeedback } from "react-native";
 import React from "react";
 
 export class SingleBillPanel extends React.Component {
@@ -7,14 +7,16 @@ export class SingleBillPanel extends React.Component {
     const bill = this.props.bill;
 
     return (
-      <View style={styles.panel}>
-        <Text style={styles.placeName}>{bill.name}</Text>
-        <Text style={styles.address}>{bill.address}</Text>
-        <View style={styles.sumBlock}>
-          <Text style={styles.sum}>Сумма</Text>
-          <Text style={styles.sum}>{bill.sum}р</Text>
+      <TouchableNativeFeedback onPress={() => this.props.navigation.navigate('EventInfo', { id: 1 })}>
+        <View style={styles.panel}>
+          <Text style={styles.placeName}>{bill.name}</Text>
+          <Text style={styles.address}>{bill.address}</Text>
+          <View style={styles.sumBlock}>
+            <Text style={styles.sum}>Сумма</Text>
+            <Text style={styles.sum}>{bill.sum}р</Text>
+          </View>
         </View>
-      </View>
+      </TouchableNativeFeedback>
     );
   }
 }

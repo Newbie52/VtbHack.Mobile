@@ -7,7 +7,6 @@ export class ExtendedSingleBillPanel extends React.Component {
         const bill = this.props.bill;
 
         return (
-            <TouchableNativeFeedback onPress={()=>this.props.navigation.navigate('EventInfo',{ id: 1 })}>
             <View style={styles.panel}>
                 <Text style={styles.placeName}>{bill.name}</Text>
                 <Text style={styles.address}>{bill.address}</Text>
@@ -23,7 +22,6 @@ export class ExtendedSingleBillPanel extends React.Component {
                     }} />
                 </View>
             </View>
-            </TouchableNativeFeedback>
         );
     }
 }
