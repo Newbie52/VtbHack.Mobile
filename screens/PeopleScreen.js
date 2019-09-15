@@ -29,10 +29,10 @@ export class PeopleScreen extends React.Component {
           <View style={styles.cancelAggreeFooter}>
           <TouchableOpacity style={styles.buttonCancel} onPress={() => {  }}>
                 <Text style={{  alignSelf: 'center',
-                                color: '#81818',
+                                color: '#818181',
                                 fontSize: 18,
                                 fontWeight: 'normal',
-                                paddingTop:5
+                                paddingTop:7
                             }}>Отмена</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.buttonOk} onPress={this.goToNextScreen}>
@@ -41,7 +41,7 @@ export class PeopleScreen extends React.Component {
                             color: '#16ACB8',
                             fontSize: 18,
                             fontWeight: 'normal',
-                            paddingTop:5
+                            paddingTop:7
                            }}>Готово</Text>
             </TouchableOpacity>
           </View>
@@ -60,10 +60,10 @@ export const pos = {
 
 const styles = StyleSheet.create({
   contactsItem : {
-    flex: 0.8,
+    flex: 0.9,
     borderTopLeftRadius: 15,
     borderTopRightRadius: 15,
-    height: "80%",
+    height: "90%",
     marginTop: 85,
     justifyContent: 'center',
     alignItems: 'stretch',
