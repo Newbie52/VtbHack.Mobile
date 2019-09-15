@@ -10,5 +10,5 @@ import {InvoiceScreen} from "../screens/InvoiceScreen";
 export const AppNavigator = createBottomTabNavigator({
   Bills: BillsScreen,
   Circle: BillAddingModuleNavigator,
-  Contacts: ContactsScreen
+  Contacts: InvoiceScreen
 });

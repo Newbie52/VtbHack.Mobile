@@ -1,1 +1,9 @@
-{}
+{
+  "devToolsPort": 19003,
+  "expoServerPort": 19000,
+  "packagerPort": 19001,
+  "packagerPid": 19028,
+  "expoServerNgrokUrl": "https://he-mzs.anonymous.vtbhack-mobile.exp.direct",
+  "packagerNgrokUrl": "https://packager.he-mzs.anonymous.vtbhack-mobile.exp.direct",
+  "ngrokPid": 15284
+}
