@@ -1,4 +1,4 @@
-import { Text, View, ListView, TouchableNativeFeedback, StyleSheet, Button } from "react-native";
+import { Text, View, ListView, TouchableOpacity, StyleSheet, Button } from "react-native";
 import React from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import {ParticipantList} from "../components/ParticipantList";
@@ -35,7 +35,7 @@ export class PeopleScreen extends React.Component {
                                 paddingTop:5
                             }}>Отмена</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.buttonOk} onPress={() => {  }}>
+            <TouchableOpacity style={styles.buttonOk} onPress={this.goToNextScreen}>
               <Text style={{ 
                             alignSelf: 'center',
                             color: '#81818',
@@ -44,7 +44,6 @@ export class PeopleScreen extends React.Component {
                             paddingTop:5
                            }}>Готово</Text>
             </TouchableOpacity>
-            <Button style={styles.buttonOk} onPress={this.goToNextScreen} title='Готово'></Button>
           </View>
         </LinearGradient>
       </View>
