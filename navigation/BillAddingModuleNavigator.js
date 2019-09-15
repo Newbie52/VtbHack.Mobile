@@ -2,6 +2,8 @@ import { createStackNavigator } from 'react-navigation-stack';
 import QrScanScreen from "../screens/QrScanScreen";
 import {PeopleScreen} from "../screens/PeopleScreen";
 import {SplitScreen} from "../screens/SplitScreen";
+import { AddNewContactScreen} from "../screens/AddNewContactScreen";
+import {ScanQrContactScreen } from "../screens/ScanQrContactScreen"
 
 const BillAddingModuleNavigator = createStackNavigator({
   Qr: {
@@ -16,6 +18,18 @@ const BillAddingModuleNavigator = createStackNavigator({
       header: null
     },
     screen: PeopleScreen
+  },
+  AddContact:{
+    navigationOptions: {
+      header: null
+    },
+    screen: AddNewContactScreen
+  },
+  AddNewContact:{
+    screen:ScanQrContactScreen,
+    navigationOptions:{
+      header:null
+    }
   },
 
   Split: {

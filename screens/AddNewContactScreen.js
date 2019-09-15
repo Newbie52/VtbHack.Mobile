@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import { Button } from 'react-native';
-export default class AddNewContactScreen extends React.Component {
+
+export class AddNewContactScreen extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             name: "",
-            address: this.props.address
+            address: this.props.navigation.getParam('address', null)
         };
     }
     onChanged(text) {

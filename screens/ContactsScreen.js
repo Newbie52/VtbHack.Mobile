@@ -1,5 +1,5 @@
-import { Text, View, ListView, TouchableNativeFeedback, StyleSheet, Button } from "react-native";
 import React from "react";
+import { Text, View, ListView, TouchableNativeFeedback, StyleSheet, Button } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { ParticipantList } from "./PeopleScreen";
 
@@ -22,7 +22,7 @@ export class ContactsScreen extends React.Component {
             width: '80%' }}>
               <ParticipantList/>
           </View>
-          <Button style={styles.addContactText} title='Добавить контакт +' onPress={() => this.props.navigation.navigate('PeopleScreen')}></Button>
+          <Button style={styles.addContactText} title='Добавить контакт +' onPress={() => this.props.navigation.navigate('AddNewContact')}></Button>
         </LinearGradient>
       </View>
     );
