@@ -3,10 +3,10 @@ import {BillsScreen} from '../screens/BillsScreen'
 import {QrScanScreen} from "../screens/QrScanScreen";
 import {PeopleScreen} from "../screens/PeopleScreen";
 import {ContactsScreen} from "../screens/ContactsScreen";
-
+import {ManualSumScreen} from "../screens/ManualSumScreen";
 
 export const TabNavigator = createBottomTabNavigator({
   Bills: BillsScreen,
   Circle: QrScanScreen,
-  Contacts: ContactsScreen
+  Contacts: ManualSumScreen
 });
