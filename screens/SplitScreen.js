@@ -70,7 +70,11 @@ export class SplitScreen extends React.Component {
           name: 'Test name',
           address: 'тест адрес',
           sum: 123,
-          isDivided: false
+          isDivided: false,
+          Invoices=[
+            {payerName:"",
+          amount:0, invoiceUuid:"uidhere"}
+          ]
         });
       await AsyncStorage.setItem("Events", JSON.stringify(eventsArray));
       //добавить навигацию к списку ивентов

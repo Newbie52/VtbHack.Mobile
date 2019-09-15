@@ -16,11 +16,12 @@ export function openSession() {
   });
 }
 export function createInvoice(fpsid, payerAddress, recipientAddress, amount) {
+  var uuid = uuidv4();
   args = {
     "amount": amount,
     "currencyCode": 810,
     "description": "",
-    "number": uuidv4(),
+    "number": uuid,
     "payer": payerAddress,
     "recipient": recipientAddress
   }
@@ -34,7 +35,7 @@ export function createInvoice(fpsid, payerAddress, recipientAddress, amount) {
       }
     }
   ).then(function (response) {
-    return response.json().data;
+    return uuid;
   });
 
 }
@@ -49,7 +50,7 @@ export function GetInvoiceStatus(fpsid, invoiceNumber, recipientAddress) {
 
 
 function uuidv4() {
-  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
     var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
     return v.toString(16);
   });
