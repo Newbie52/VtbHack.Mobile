@@ -56,6 +56,8 @@ export class ParticipantManualCard extends Component {
                 newText = newText + text[i];
             }
         }
+
+        newText = newText + ' рублей';
         this.setState({ amount: newText });
     }
     render() {
