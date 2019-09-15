@@ -1,6 +1,5 @@
 import { Text, View, ListView, TouchableNativeFeedback, StyleSheet, Button, TouchableOpacity, Image} from "react-native";
 import React from "react";
-import { Text, View, ListView, TouchableNativeFeedback, StyleSheet, Button } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import {ParticipantList} from "../components/ParticipantList";
 
@@ -35,27 +34,27 @@ export class ContactsScreen extends React.Component {
   }
 }
 
-export class ParticipantCard extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      selected: false
-    };
-  }
-  onClick() {
-    this.setState({ selected: !this.state.selected });
-  }
-
-  render() {
-    return (
-      <TouchableNativeFeedback onPress={() => this.onClick()}>
-        <View style={{ backgroundColor: this.state.selected ? "#CAECFF" : "#FFFFFF", height: 50, borderRadius: 20, padding: 10 }}>
-          <Text>{this.props.name}</Text>
-        </View>
-      </TouchableNativeFeedback>
-    );
-  }
-}
+// export class ParticipantCard extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       selected: false
+//     };
+//   }
+//   onClick() {
+//     this.setState({ selected: !this.state.selected });
+//   }
+//
+//   render() {
+//     return (
+//       <TouchableNativeFeedback onPress={() => this.onClick()}>
+//         <View style={{ backgroundColor: this.state.selected ? "#CAECFF" : "#FFFFFF", height: 50, borderRadius: 20, padding: 10 }}>
+//           <Text>{this.props.name}</Text>
+//         </View>
+//       </TouchableNativeFeedback>
+//     );
+//   }
+// }
 
 export const pos = {
   position: 'absolute',

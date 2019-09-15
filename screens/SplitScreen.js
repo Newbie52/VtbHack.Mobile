@@ -34,7 +34,7 @@ export class SplitScreen extends React.Component {
                     title={rowData.name}
                     checkedIcon='dot-circle-o'
                     uncheckedIcon='circle-o'
-                    checked={this.state.selectedUser === rowID}
+                    value={this.state.selectedUser === rowID}
                     onPress={() => this.setState({ selectedUser: rowID })}
                   ></CheckBox>
                   <Text>{rowData.name}</Text>
