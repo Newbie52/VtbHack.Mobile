@@ -1,3 +1,4 @@
+import { Text, View, ListView, TouchableNativeFeedback, StyleSheet, Button, TouchableOpacity, Image} from "react-native";
 import React from "react";
 import { Text, View, ListView, TouchableNativeFeedback, StyleSheet, Button } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
@@ -15,13 +16,19 @@ export class ContactsScreen extends React.Component {
             marginBottom: 40,
             flex: 0.8,
             justifyContent: 'center',
-            alignItems: 'center', 
+            alignItems: 'center',
             //color: '#FFFFFF', 
             //backgroundColor: '#3F3F3F',
-            width: '80%' }}>
-              <ParticipantList/>
+            width: '80%'
+          }}>
+            <ParticipantList />
           </View>
-          <Button style={styles.addContactText} title='Добавить контакт +' onPress={() => this.props.navigation.navigate('AddNewContact')}></Button>
+          <View style={styles.addContactRow}>
+            <Text style={{flex: 0.8}}>Добавить контакт</Text>
+            <TouchableOpacity style={{flex: 0.2}} onPress={() => {  }}>
+              <Image source={require('./img/add-contact-button.png')}/>
+            </TouchableOpacity>
+          </View>
         </LinearGradient>
       </View>
     );
@@ -74,9 +81,9 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
   },
-  cancelAggreeFooter:{
+  cancelAggreeFooter: {
     flex: 0.1,
-    flexDirection:'row',
+    flexDirection: 'row',
     color: '#3F3F3F',
     backgroundColor: '#3F3F3F',
     borderTopLeftRadius: 15,
@@ -88,23 +95,27 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: '100%'
   },
-  buttonCancel:{
-    backgroundColor:'#FFFFFF',
-    color:'#818181',
+  addContactRow: {
+    flexDirection: 'row',
+    height: '10%',
+  },
+  buttonCancel: {
+    backgroundColor: '#FFFFFF',
+    color: '#818181',
     borderColor: '#45BCFF',
     width: '10%',
     marginLeft: 20,
     marginRight: 10,
-    borderRadius:10,
+    borderRadius: 10,
   },
-  buttonOk:{
-    backgroundColor:'#FFFFFF',
-    color:'#16ACB8',
+  buttonOk: {
+    backgroundColor: '#FFFFFF',
+    color: '#16ACB8',
     borderColor: '#45BCFF',
     width: '10%',
     marginRight: 20,
     marginLeft: 10,
-    borderRadius:10,
+    borderRadius: 10,
   },
   addContactText: {
     position: 'absolute',
@@ -112,7 +123,7 @@ const styles = StyleSheet.create({
     height: 31,
     left: 189,
     top: 670,
-    
+
     fontFamily: 'Roboto',
     fontStyle: 'normal',
     fontWeight: 'bold',
