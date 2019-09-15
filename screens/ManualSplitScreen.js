@@ -61,6 +61,7 @@ export class ParticipantManualCard extends Component {
                         alignContent: 'center',
                         justifyContent: 'center' }}>
                         <TextInput
+                            style={{alignSelf: 'center'}}
                             keyboardType='numeric'
                             onChangeText={(text) => this.onChanged(text)}
                             value={this.state.amount}

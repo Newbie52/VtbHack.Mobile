@@ -25,8 +25,8 @@ export class ManualSumScreen extends React.Component {
           </View>
           
           <View style={styles.cancelAggreeFooter}>
-            <Button style={styles.buttonCancel} title='Отмена'></Button>
-            <Button style={styles.buttonOk} title='Готово'></Button>
+            <Button style={styles.buttonCancel} title='Отмена' backgroundColor='#45BCFF' borderColor='#45BCFF' borderWidth='2' color='#16ACB8'></Button>
+            <Button style={styles.buttonOk} title='Готово' backgroundColor='#45BCFF' borderColor='#45BCFF' borderWidth='2' color='#16ACB8'></Button>
           </View>
       </View>
     );
@@ -133,22 +133,24 @@ const styles = StyleSheet.create({
     width: '100%'
   },
   buttonCancel:{
-    backgroundColor:'#FFFFFF',
-    color:'#818181',
+    //backgroundColor:'#FFFFFF',
+    //color:'#818181',
     borderColor: '#45BCFF',
     width: '10%',
     marginLeft: 20,
     marginRight: 10,
     borderRadius:10,
+    borderWidth: 2
   },
   buttonOk:{
-    backgroundColor:'#FFFFFF',
-    color:'#16ACB8',
+    //backgroundColor:'#FFFFFF',
+    //color:'#16ACB8',
     borderColor: '#45BCFF',
     width: '10%',
     marginRight: 20,
     marginLeft: 10,
     borderRadius:10,
+    borderWidth: 2
   },
 });
 
