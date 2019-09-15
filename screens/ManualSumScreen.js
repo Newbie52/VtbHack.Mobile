@@ -36,12 +36,12 @@ export class ManualSumScreen extends React.Component {
             <TouchableOpacity style={styles.buttonOk} onPress={() => {  }}>
               <Text style={{ 
                             alignSelf: 'center',
-                            color: '#81818',
+                            color: '#818181',
                             fontSize: 18,
                             fontWeight: 'normal',
                             paddingTop:5
                            }}>Готово</Text>
-         </TouchableOpacity>
+            </TouchableOpacity>
           </View>
       </View>
     );
