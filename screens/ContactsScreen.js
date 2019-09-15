@@ -1,6 +1,5 @@
 import { Text, View, ListView, TouchableNativeFeedback, StyleSheet, Button, TouchableOpacity, Image} from "react-native";
 import React from "react";
-import { Text, View, ListView, TouchableNativeFeedback, StyleSheet, Button } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import {ParticipantList} from "../components/ParticipantList";
 
@@ -24,8 +23,8 @@ export class ContactsScreen extends React.Component {
             <ParticipantList />
           </View>
           <View style={styles.addContactRow}>
-            <Text style={{flex: 0.8}}>Добавить контакт</Text>
-            <TouchableOpacity style={{flex: 0.2}} onPress={() => {  }}>
+            <Text style={styles.addContactText}>Добавить контакт</Text>
+            <TouchableOpacity style={{flex: 0.4, marginRight:30}} onPress={() => { this.props.navigation.navigate('AddNewContact') }}>
               <Image source={require('./img/add-contact-button.png')}/>
             </TouchableOpacity>
           </View>
@@ -98,6 +97,7 @@ const styles = StyleSheet.create({
   addContactRow: {
     flexDirection: 'row',
     height: '10%',
+    marginLeft: '40%'
   },
   buttonCancel: {
     backgroundColor: '#FFFFFF',
@@ -118,12 +118,13 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   addContactText: {
-    position: 'absolute',
-    width: 121,
-    height: 31,
-    left: 189,
-    top: 670,
-
+    flex: 0.6,
+    marginLeft:'10%',
+    // position: 'absolute',
+    // width: 121,
+    // height: 31,
+    // left: 189,
+    // top: 670,
     fontFamily: 'Roboto',
     fontStyle: 'normal',
     fontWeight: 'bold',
