@@ -61,3 +61,11 @@ export const billsMock = [
     isDivided: false
   },
 ];
+
+export const billMock =
+  {
+    name: 'LL Pation',
+    address: 'ул. Летниковаская 2',
+    sum: 758,
+    isDivided: false
+  };
