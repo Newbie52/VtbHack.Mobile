@@ -1,75 +1,37 @@
 import { Text, View, ListView, TouchableNativeFeedback, StyleSheet, Button } from "react-native";
 import React from "react";
 import { LinearGradient } from "expo-linear-gradient";
+import {ParticipantList} from "../components/ParticipantList";
 
 export class PeopleScreen extends React.Component {
+
+  state = {selectedUsers: []};
+
+  updateAfterListChanged = (data) => {
+    this.setState({selectedUsers: data})
+  };
+
+  billItems = this.props.navigation.getParam('billItems', null);
+
+  goToNextScreen = () => {
+    const users = this.state.selectedUsers.filter(user => user.isSelected);
+    this.props.navigation.navigate('Split', { billItems: this.billItems, users: users });
+  };
+
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'stretch' }}>
         <LinearGradient colors={['#000000', '#154689']} start={[0, 0]} end={[1, 1]} style={styles.gradientContainer}>
           <Text style={styles.header}>Участники</Text>
-          <View style={{ 
-            flex: 0.8,
-            borderTopLeftRadius: 15,
-            borderTopRightRadius: 15,
-            height: "80%", 
-            marginTop: 85,
-            flex: 1,
-            justifyContent: 'center',
-            alignItems: 'stretch', 
-            color: '#FFFFFF', 
-            backgroundColor: '#FFFFFF',
-            width: '100%' }}>
-              <ParticipantList/>
+          <View style={styles.contactsItem}>
+              <ParticipantList updateParentData={this.updateAfterListChanged}/>
           </View>
           <View style={styles.cancelAggreeFooter}>
             <Button style={styles.buttonCancel} title='Отмена'></Button>
-            <Button style={styles.buttonOk} title='Готово'></Button>
+            <Button style={styles.buttonOk} onPress={this.goToNextScreen} title='Готово'></Button>
           </View>
         </LinearGradient>
       </View>
-    );
-  }
-}
-
-export class ParticipantList extends React.Component {
-  constructor() {
-    super();
-    const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
-    this.state = {
-      dataSource: ds.cloneWithRows(['Джсон стетхем', 'Иксмэль сталоне','Джсон стетхем','Джсон стетхем','Джсон стетхем','Джсон стетхем','Джсон стетхем','Джсон стетхем','Джсон стетхем','Джсон стетхем','Джсон стетхем','Джсон стетхем','Джсон стетхем','Джсон стетхем','Джсон стетхем','Джсон стетхем'])
-    }
-  };
-  render() {
-    return (
-      <ListView
-        dataSource={this.state.dataSource}
-        renderRow={
-          (rowData) =>
-            <ParticipantCard name={rowData} />}
-      />
-    )
-  }
-}
-
-export class ParticipantCard extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      selected: false
-    };
-  }
-  onClick() {
-    this.setState({ selected: !this.state.selected });
-  }
-
-  render() {
-    return (
-      <TouchableNativeFeedback onPress={() => this.onClick()}>
-        <View style={{ backgroundColor: this.state.selected ? "#CAECFF" : "#FFFFFF", height: 50, borderRadius: 20, padding: 10 }}>
-          <Text>{this.props.name}</Text>
-        </View>
-      </TouchableNativeFeedback>
     );
   }
 }
@@ -79,9 +41,21 @@ export const pos = {
   top: 0,
   alignItems: 'center',
   justifyContent: 'center'
-}
+};
 
 const styles = StyleSheet.create({
+  contactsItem : {
+    flex: 0.8,
+    borderTopLeftRadius: 15,
+    borderTopRightRadius: 15,
+    height: "80%",
+    marginTop: 85,
+    justifyContent: 'center',
+    alignItems: 'stretch',
+    color: '#FFFFFF',
+    backgroundColor: '#FFFFFF',
+    width: '100%'
+  },
   gradientContainer: {
     flex: 1,
     justifyContent: 'center',
