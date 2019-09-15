@@ -6,7 +6,7 @@ import * as Permissions from 'expo-permissions';
 import { BarCodeScanner } from 'expo-barcode-scanner';
 import {sendQrData} from "../api/code-scanner";
 
-export default class QrScanScreen extends React.Component {
+export default class ScanQrContactScreen extends React.Component {
   state = {
     hasCameraPermission: null,
     scanned: false,
@@ -51,13 +51,7 @@ export default class QrScanScreen extends React.Component {
 
   handleBarCodeScanned = ({ type, data }) => {
     this.setState({ scanned: true });
-    sendQrData(data).then(res => {
-      if (res && res.length > 0) {
-        alert('QR-код успешно отсканирован');
-        this.props.navigation.navigate('People', { billItems: res });
-      } else {
-        alert('Попробуйте другой код');
-      }
-    });
+    alert('QR-код успешно отсканирован');
+    this.props.navigation.navigate('Что-то туть');
   };
 }
