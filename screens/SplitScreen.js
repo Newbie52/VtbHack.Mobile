@@ -1,5 +1,5 @@
 import React from "react";
-import {ListView, Text, View, CheckBox, Image, TouchableOpacity} from 'react-native';
+import {ListView, Text, View, CheckBox, Image, TouchableOpacity, StyleSheet} from 'react-native';
 
 
 export class SplitScreen extends React.Component {
@@ -59,24 +59,37 @@ export class SplitScreen extends React.Component {
 
   render() {
     return (
-      <View style={{ paddingTop: 100, flex: 1, flexDirection: 'row' }}>
-        <View style={{ flex: 2, paddingHorizontal: 15 }}>
-          { this.state.users.map( (user, index) =>
-          <TouchableOpacity onPress={() => this.setState({selectedUser: index})}
-                            style={this.getUserStyle(index)}>
-            <Text>{user.name}</Text>
-            <Text style={{fontWeight: 'bold'}}>Сумма: {user.sum}р</Text>
-          </TouchableOpacity>) }
+      <View style={{flex:1, flexDirection: 'column'}}>
+        <View style={{ paddingTop: 100, flex: 0.9, flexDirection: 'row' }}>
+          <View style={{ flex: 2, paddingHorizontal: 15 }}>
+            { this.state.users.map( (user, index) =>
+            <TouchableOpacity onPress={() => this.setState({selectedUser: index})}
+                              style={this.getUserStyle(index)}>
+              <Text>{user.name}</Text>
+              <Text style={{fontWeight: 'bold'}}>Сумма: {user.sum}р</Text>
+            </TouchableOpacity>) }
+          </View>
+          <View style={{ flex: 4, paddingHorizontal: 15 }}>
+            { this.state.products.map((product) =>
+              <TouchableOpacity style={{ height: 30, flex: 1, flexDirection: 'row', justifyContent: 'space-between', marginBottom: 10, borderBottomWidth: 2, borderColor: 'blue'}}
+                                onPress={() => this.addProduct(product.id)}>
+                <Text>{product.name}</Text>
+                <Text>{product.price}</Text>
+              </TouchableOpacity>
+            )}
+          </View>
         </View>
-        <View style={{ flex: 4, paddingHorizontal: 15 }}>
-          { this.state.products.map((product) =>
-            <TouchableOpacity style={{ height: 30, flex: 1, flexDirection: 'row', justifyContent: 'space-between', marginBottom: 10, borderBottomWidth: 2, borderColor: 'blue'}}
-                              onPress={() => this.addProduct(product.id)}>
-              <Text>{product.name}</Text>
-              <Text>{product.price}</Text>
-            </TouchableOpacity>
-          )}
-        </View>
+        <View style={styles.cancelAggreeFooter}>
+          <TouchableOpacity style={styles.buttonOk} onPress={() => {  }}>
+                <Text style={{ 
+                              alignSelf: 'center',
+                              color: '#16ACB8',
+                              fontSize: 18,
+                              fontWeight: 'normal',
+                              paddingTop:7
+                            }}>Отправить запрос</Text>
+          </TouchableOpacity>
+         </View>
       </View>
     )
   }
@@ -93,3 +106,29 @@ export class SplitScreen extends React.Component {
     return {marginLeft: 20}
   }
 }
+
+const styles = StyleSheet.create({
+  cancelAggreeFooter:{
+    flex: 0.1,
+    flexDirection:'row',
+    color: '#3F3F3F',
+    backgroundColor: '#3F3F3F',
+    borderTopLeftRadius: 15,
+    borderTopRightRadius: 15,
+    height: '10%',
+    marginTop: -30,
+    //top: 200,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%'
+  },
+  buttonOk:{
+    backgroundColor:'#FFFFFF',
+    color:'#16ACB8',
+    borderColor: '#45BCFF',
+    width: '45%',
+    height: '65%',
+    borderRadius:10,
+    borderWidth: 2
+  }
+});
