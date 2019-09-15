@@ -4,9 +4,23 @@ import {LinearGradient} from "expo-linear-gradient";
 import {billsMock} from "../mock/bills-data";
 import {SingleBillPanel} from "../components/SingleBillPanel";
 
-const bills = billsMock;
-
 export class BillsScreen extends React.Component {
+  state = {
+    bills: [],
+  };
+
+componentDidMount()
+{
+  AsyncStorage.getItem("Events").then((val)=>{
+    var events =[];
+    if(val!=undefined||val!=null)
+    {
+      var events = JSON.parse(val);
+      this.setState({bills: events});
+    }
+  });
+}
+
   render() {
 
     return (

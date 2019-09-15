@@ -8,7 +8,7 @@ const invoices = invoicesMock;
 export class ExtendedSingleBillPanel extends React.Component {
 
     render() {
-        const bill = this.props.bill;
+        const bill = this.props.invoices;
 
         return (
             <View style={styles.panel}>

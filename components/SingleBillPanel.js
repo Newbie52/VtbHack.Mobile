@@ -7,7 +7,7 @@ export class SingleBillPanel extends React.Component {
     const bill = this.props.bill;
 
     return (
-      <TouchableNativeFeedback onPress={() => this.props.navigation.navigate('EventInfo', { id: 1 })}>
+      <TouchableNativeFeedback onPress={() => this.props.navigation.navigate('EventInfo', { objs: invoices })}>
         <View style={styles.panel}>
           <Text style={styles.placeName}>{bill.name}</Text>
           <Text style={styles.address}>{bill.address}</Text>

@@ -71,7 +71,7 @@ export class SplitScreen extends React.Component {
           address: 'тест адрес',
           sum: 123,
           isDivided: false,
-          Invoices=[
+          invoices=[
             {payerName:"",
           amount:0, invoiceUuid:"uidhere"}
           ]
