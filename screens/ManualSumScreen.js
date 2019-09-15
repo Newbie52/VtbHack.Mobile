@@ -1,4 +1,4 @@
-import { Text, View, ListView, TouchableNativeFeedback, StyleSheet, Button } from "react-native";
+import { Text, View, ListView, TouchableNativeFeedback, StyleSheet, Button, TouchableOpacity } from "react-native";
 import React from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import { ParticipantManualCard } from "./ManualSplitScreen";
@@ -25,8 +25,23 @@ export class ManualSumScreen extends React.Component {
           </View>
           
           <View style={styles.cancelAggreeFooter}>
-            <Button style={styles.buttonCancel} title='Отмена' backgroundColor='#45BCFF' borderColor='#45BCFF' borderWidth='2' color='#16ACB8'></Button>
-            <Button style={styles.buttonOk} title='Готово' backgroundColor='#45BCFF' borderColor='#45BCFF' borderWidth='2' color='#16ACB8'></Button>
+            <TouchableOpacity style={styles.buttonCancel} onPress={() => {  }}>
+                <Text style={{  alignSelf: 'center',
+                                color: '#16ACB8',
+                                fontSize: 18,
+                                fontWeight: 'normal',
+                                paddingTop:5
+                            }}>Отмена</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.buttonOk} onPress={() => {  }}>
+              <Text style={{ 
+                            alignSelf: 'center',
+                            color: '#81818',
+                            fontSize: 18,
+                            fontWeight: 'normal',
+                            paddingTop:5
+                           }}>Готово</Text>
+         </TouchableOpacity>
           </View>
       </View>
     );
@@ -133,22 +148,24 @@ const styles = StyleSheet.create({
     width: '100%'
   },
   buttonCancel:{
-    //backgroundColor:'#FFFFFF',
-    //color:'#818181',
+    backgroundColor:'#FFFFFF',
+    color:'#818181',
     borderColor: '#45BCFF',
-    width: '10%',
+    width: '30%',
+    height: '65%',
     marginLeft: 20,
-    marginRight: 10,
+    marginRight: 40,
     borderRadius:10,
     borderWidth: 2
   },
   buttonOk:{
-    //backgroundColor:'#FFFFFF',
-    //color:'#16ACB8',
+    backgroundColor:'#FFFFFF',
+    color:'#16ACB8',
     borderColor: '#45BCFF',
-    width: '10%',
+    width: '30%',
+    height: '65%',
     marginRight: 20,
-    marginLeft: 10,
+    marginLeft: 40,
     borderRadius:10,
     borderWidth: 2
   },

@@ -15,8 +15,23 @@ export default class ManualSplitScreen extends Component {
             <View>
                 <ParticipantManualCard/>
                 <View style={styles.cancelAggreeFooter}>
-                    <Button style={styles.buttonCancel} title='Отмена'></Button>
-                    <Button style={styles.buttonOk} title='Готово'></Button>
+                <TouchableOpacity style={styles.buttonCancel} onPress={() => {  }}>
+                <Text style={{  alignSelf: 'center',
+                                color: '#16ACB8',
+                                fontSize: 18,
+                                fontWeight: 'normal',
+                                paddingTop:5
+                            }}>Отмена</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.buttonOk} onPress={() => {  }}>
+              <Text style={{ 
+                            alignSelf: 'center',
+                            color: '#81818',
+                            fontSize: 18,
+                            fontWeight: 'normal',
+                            paddingTop:5
+                           }}>Готово</Text>
+            </TouchableOpacity>
                 </View>
             </View>
         )
@@ -73,3 +88,42 @@ export class ParticipantManualCard extends Component {
         )
     }
 }
+
+const styles = StyleSheet.create({
+    cancelAggreeFooter:{
+      flex: 0.1,
+      flexDirection:'row',
+      color: '#3F3F3F',
+      backgroundColor: '#3F3F3F',
+      borderTopLeftRadius: 15,
+      borderTopRightRadius: 15,
+      height: '10%',
+      marginTop: -30,
+      //top: 200,
+      justifyContent: 'center',
+      alignItems: 'center',
+      width: '100%'
+    },
+    buttonCancel:{
+      backgroundColor:'#FFFFFF',
+      color:'#818181',
+      borderColor: '#45BCFF',
+      width: '30%',
+      height: '65%',
+      marginLeft: 20,
+      marginRight: 40,
+      borderRadius:10,
+      borderWidth: 2
+    },
+    buttonOk:{
+      backgroundColor:'#FFFFFF',
+      color:'#16ACB8',
+      borderColor: '#45BCFF',
+      width: '30%',
+      height: '65%',
+      marginRight: 20,
+      marginLeft: 40,
+      borderRadius:10,
+      borderWidth: 2
+    },
+  });
