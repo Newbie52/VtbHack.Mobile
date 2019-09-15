@@ -2,6 +2,7 @@ import { Text, View, ListView, TouchableNativeFeedback, StyleSheet, Button, Touc
 import React from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import { ParticipantManualCard } from "./ManualSplitScreen";
+import { ParticipantManualCardList } from "./ManualSplitScreen";
 
 export class ManualSumScreen extends React.Component {
   render() {
@@ -21,13 +22,13 @@ export class ManualSumScreen extends React.Component {
             color: '#FFFFFF', 
             backgroundColor: '#FFFFFF',
             width: '100%' }}>
-                <ParticipantManualCard/>
+                <ParticipantManualCardList/>
           </View>
           
           <View style={styles.cancelAggreeFooter}>
             <TouchableOpacity style={styles.buttonCancel} onPress={() => {  }}>
                 <Text style={{  alignSelf: 'center',
-                                color: '#16ACB8',
+                                color: '#818181',
                                 fontSize: 18,
                                 fontWeight: 'normal',
                                 paddingTop:5
@@ -36,7 +37,7 @@ export class ManualSumScreen extends React.Component {
             <TouchableOpacity style={styles.buttonOk} onPress={() => {  }}>
               <Text style={{ 
                             alignSelf: 'center',
-                            color: '#818181',
+                            color: '#16ACB8',
                             fontSize: 18,
                             fontWeight: 'normal',
                             paddingTop:5

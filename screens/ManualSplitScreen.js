@@ -14,12 +14,12 @@ export default class ManualSplitScreen extends Component {
     render() {
         return (
             <View>
-                <ParticipantManualCard name={"Андрей"} />
+                <ParticipantManualCard/>
                 <View style={styles.cancelAggreeFooter}>
                     <TouchableOpacity style={styles.buttonCancel} onPress={() => { }}>
                         <Text style={{
                             alignSelf: 'center',
-                            color: '#16ACB8',
+                            color: '#818181',
                             fontSize: 18,
                             fontWeight: 'normal',
                             paddingTop: 5
@@ -28,7 +28,7 @@ export default class ManualSplitScreen extends Component {
                     <TouchableOpacity style={styles.buttonOk} onPress={() => { }}>
                         <Text style={{
                             alignSelf: 'center',
-                            color: '#818181',
+                            color: '#16ACB8',
                             fontSize: 18,
                             fontWeight: 'normal',
                             paddingTop: 5
@@ -39,6 +39,26 @@ export default class ManualSplitScreen extends Component {
         )
     }
 }
+
+export class ParticipantManualCardList extends React.Component {
+    constructor() {
+      super();
+      const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
+      this.state = {
+        dataSource: ds.cloneWithRows(['Андрей', 'Егор', 'Илья', 'Виктория','Максим'])
+      }
+    };
+    render() {
+      return (
+        <ListView
+          dataSource={this.state.dataSource}
+          renderRow={
+            (rowData) =>
+              <ParticipantManualCard name={rowData} />}
+        />
+      )
+    }
+  }
 
 export class ParticipantManualCard extends Component {
     constructor(props) {
@@ -64,11 +84,10 @@ export class ParticipantManualCard extends Component {
     render() {
         return (
             <View>
-                {/* <Text>{this.props.name}</Text> */}
-                <View style={{ flexDirection: 'row', marginLeft:20}}>
-                    <View style={{flex: 0.3, marginTop: -10}}>
+                <View style={{ flexDirection: 'row', marginTop: 30, marginLeft:20}}>
+                    <View style={{flex: 0.3, marginTop: -10, alignItems: 'center'}}>
                         <Avatar rounded  activeOpacity={0.7} icon={{name: 'user', type: 'font-awesome'}} size='large'/>
-                        <Text style={{ marginLeft: 10 }}>{this.props.name}</Text>
+                        <Text>{this.props.name}</Text>
                     </View>
 
                     <View style={{
