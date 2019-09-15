@@ -6,9 +6,10 @@ import {ContactsScreen} from "../screens/ContactsScreen";
 import BillAddingModuleNavigator from "./BillAddingModuleNavigator";
 import {ManualSumScreen} from "../screens/ManualSumScreen";
 import {InvoiceScreen} from "../screens/InvoiceScreen";
+import {SplitScreen} from "../screens/SplitScreen";
 
 export const AppNavigator = createBottomTabNavigator({
   Bills: BillsScreen,
   Circle: BillAddingModuleNavigator,
-  Contacts: InvoiceScreen
+  Contacts: SplitScreen
 });
