@@ -9,5 +9,5 @@ import {ManualSumScreen} from "../screens/ManualSumScreen";
 export const AppNavigator = createBottomTabNavigator({
   Bills: BillsScreen,
   Circle: BillAddingModuleNavigator,
-  Contacts: PeopleScreen
+  Contacts: ContactsScreen
 });
