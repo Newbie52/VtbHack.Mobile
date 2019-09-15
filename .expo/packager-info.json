@@ -1,9 +1,9 @@
 {
-  "devToolsPort": 19003,
+  "devToolsPort": 19002,
   "expoServerPort": 19000,
-  "packagerPort": 19001,
-  "packagerPid": 13196,
-  "expoServerNgrokUrl": "https://df-6s6.anonymous.vtbhack-mobile.exp.direct",
-  "packagerNgrokUrl": "https://packager.df-6s6.anonymous.vtbhack-mobile.exp.direct",
-  "ngrokPid": 17644
+  "packagerPort": null,
+  "packagerPid": null,
+  "expoServerNgrokUrl": "https://sp-uni.anonymous.vtbhack-mobile.exp.direct",
+  "packagerNgrokUrl": "https://packager.sp-uni.anonymous.vtbhack-mobile.exp.direct",
+  "ngrokPid": 18632
 }

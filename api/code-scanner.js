@@ -5,16 +5,15 @@ export function sendQrData(data) {
 export function openSession() {
   args = {
     "addresses": [],
-    "deviceId": DeviceInfo.getUniqueID(),
+    "deviceId": 12321243,
     "deviceType": 0
   }
-  fetch('http://89.208.84.235:31080/api/v1/session', {
+  return fetch('http://89.208.84.235:31080/api/v1/session', {
     method: 'post',
     body: JSON.stringify(args)
-  }).then(function (response) {
-    return response.json().data;
   });
 }
+
 export function createInvoice(fpsid, payerAddress, recipientAddress, amount) {
   var uuid = uuidv4();
   args = {
@@ -35,6 +34,7 @@ export function createInvoice(fpsid, payerAddress, recipientAddress, amount) {
       }
     }
   ).then(function (response) {
+    console.log(response);
     return uuid;
   });
 

@@ -1,6 +1,7 @@
 import React from "react";
 import {ListView, Text, View, CheckBox, Image, TouchableOpacity, StyleSheet} from 'react-native';
-import { uuidv4 } from '../api/code-scanner'
+import {createInvoice, openSession, uuidv4} from '../api/code-scanner'
+import {AsyncStorage} from 'react-native';
 
 export class SplitScreen extends React.Component {
 
@@ -11,10 +12,11 @@ export class SplitScreen extends React.Component {
     super(props);
 
     const usersSelected = this.props.navigation.getParam('users', null);
+    console.log(usersSelected);
     const billItems = this.props.navigation.getParam('billItems', null);
 
     const products = billItems.map((item, index) => { return { id: index, name: item.name, price: item.price, users: [] } });
-    const users = usersSelected.map(user => { return { name: user.name, products: [], sum: 0 } });
+    const users = usersSelected.map(user => { return { name: user.name, products: [], sum: 0, address: user.address } });
 
     const partDs = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
     const itemsDs = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
@@ -48,9 +50,6 @@ export class SplitScreen extends React.Component {
     users[this.state.selectedUser].products.push(products.filter(item => item.id === index));
     users[this.state.selectedUser].sum += currentproduct.price;
 
-    console.log(users[this.state.selectedUser].sum);
-    console.log(currentproduct.price);
-
     this.setState({
       users: users,
       products: products.filter(item => item.id !== index)
@@ -59,26 +58,55 @@ export class SplitScreen extends React.Component {
 
   submitEvent() {
     try {
-      var events = await AsyncStorage.getItem("Events");
-      if (events == null) {
-        events = "[]";
-      }
-      var eventsArray = JSON.parse(events);
-      eventsArray.push(
-        {
-          id: uuidv4(),
-          name: 'Test name',
-          address: 'тест адрес',
-          sum: 123,
-          isDivided: false,
-          Invoices=[
-            {payerName:"",
-          amount:0, invoiceUuid:"uidhere"}
-          ]
+      openSession().then(function (response) {
+        const data = response.json().data;
+
+        // let events = AsyncStorage.getItem("Events");
+        // if (events == null) {
+        //   events = "[]";
+        // }
+        //
+        // var eventsArray = JSON.parse(events);
+        //
+        // eventsArray.push(
+        //   {
+        //     id: uuidv4(),
+        //     name: 'Test name',
+        //     address: 'тест адрес',
+        //     sum: 123,
+        //     isDivided: false,
+        //     Invoices: []
+        //   });
+        //
+        // const invoices = [];
+        this.state.users.forEach(user => {
+          const uuid = createInvoice(data, user.address,123, user.sum);
+          // invoices.push({payerName: user.address, amount: user.sum, invoiceUuid: uuid});
+          console.log(uuid);
+
+          // eventsArray.push(
+          //   {
+          //     id: uuidv4(),
+          //     name: 'Test name',
+          //     address: 'тест адрес',
+          //     sum: 123,
+          //     isDivided: false,
+          //     Invoices: [
+          //       {
+          //         payerName:"",
+          //         amount:0,
+          //         invoiceUuid:"uidhere"
+          //       }
+          //     ]
+          //   });
+          //
+          // AsyncStorage.setItem("Events", JSON.stringify(eventsArray));
         });
-      await AsyncStorage.setItem("Events", JSON.stringify(eventsArray));
+      });
       //добавить навигацию к списку ивентов
     } catch (error) {
+      console.log('fuck');
+      console.log(error);
       // Error saving data
     }
   }
@@ -107,7 +135,7 @@ export class SplitScreen extends React.Component {
           </View>
         </View>
         <View style={styles.cancelAggreeFooter}>
-          <TouchableOpacity style={styles.buttonOk} onPress={() => {  }}>
+          <TouchableOpacity style={styles.buttonOk} onPress={() => {this.submitEvent()}}>
                 <Text style={{ 
                               alignSelf: 'center',
                               color: '#16ACB8',
