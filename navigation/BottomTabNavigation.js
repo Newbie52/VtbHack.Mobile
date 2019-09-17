@@ -11,5 +11,5 @@ import {SplitScreen} from "../screens/SplitScreen";
 export const AppNavigator = createBottomTabNavigator({
   Bills: BillsScreen,
   Circle: BillAddingModuleNavigator,
-  Contacts: SplitScreen
+  Contacts: ContactsScreen
 });

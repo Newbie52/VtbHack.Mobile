@@ -8,29 +8,29 @@ export const billsMock = [
   },
   {
     id: 2,
-    name: 'test',
-    address: 'test address',
+    name: 'Хачапури и вино',
+    address: 'Большя Покровская, 17',
     sum: 213124.32,
     isDivided: true
   },
   {
     id: 3,
-    name: 'test1',
-    address: 'test address1',
+    name: 'Папа Джонс',
+    address: 'ул. Проспект Мира, 119',
     sum: 900,
     isDivided: false
   },
   {
     id: 3,
-    name: 'test2',
-    address: 'test address2',
+    name: 'СушиШоп',
+    address: 'ул. Ленина, 60',
     sum: 1234.56,
     isDivided: true
   },
   {
     id: 4,
-    name: 'test3',
-    address: 'test address3',
+    name: 'Чайхона #1',
+    address: 'ул. Красноармейская, 22',
     sum: 666,
     isDivided: false
   },
@@ -38,32 +38,32 @@ export const billsMock = [
   {
     id: 5,
     name: 'LL Pation',
-    address: 'ул. Летниковаская 2',
+    address: 'ул. Летниковаская 32',
     sum: 758,
     isDivided: false
   },
   {
     id: 6,
-    name: 'test',
-    address: 'test address',
+    name: 'Рокнроллы',
+    address: 'ул. Сююмбике, 113',
     sum: 213124.32,
     isDivided: true
   },
   {
-    name: 'test1',
-    address: 'test address1',
+    name: 'Тануки',
+    address: 'ул. Максима Горького, 10',
     sum: 900,
     isDivided: false
   },
   {
-    name: 'test2',
-    address: 'test address2',
+    name: 'Якитория',
+    address: 'ул. Дьяконова, 60',
     sum: 1234.56,
     isDivided: true
   },
   {
-    name: 'test3',
-    address: 'test address3',
+    name: 'Му-Му',
+    address: 'ул. Дзержинского, 59',
     sum: 666,
     isDivided: false
   },

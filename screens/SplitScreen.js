@@ -1,5 +1,6 @@
 import React from "react";
 import {ListView, Text, View, CheckBox, Image, TouchableOpacity, StyleSheet} from 'react-native';
+import {Avatar} from 'react-native-elements';
 
 
 export class SplitScreen extends React.Component {
@@ -60,11 +61,26 @@ export class SplitScreen extends React.Component {
   render() {
     return (
       <View style={{flex:1, flexDirection: 'column'}}>
-        <View style={{ paddingTop: 100, flex: 0.9, flexDirection: 'row' }}>
+        <View style={{flex:0.1, flexDirection:'row', paddingTop:10, paddingLeft:30}}>
+          <Text style={{color:'#525252', weight: 'bold', fontSize:13, paddingRight: 15, paddingTop:35}}>Участники</Text>
+          <View
+            style={{
+              borderLeftWidth: 1,
+              borderLeftColor: '#16ACB8',
+              marginTop: 10
+            }}/>
+          <Text style={{color:'#525252', weight: 'bold', fontSize:13, paddingLeft: 15, paddingTop:35}}>Позиции</Text>
+        </View>
+        <View style={{ paddingTop: 30, flex: 0.8, flexDirection: 'row' }}>
           <View style={{ flex: 2, paddingHorizontal: 15 }}>
             { this.state.users.map( (user, index) =>
             <TouchableOpacity onPress={() => this.setState({selectedUser: index})}
                               style={this.getUserStyle(index)}>
+              {/* <View style={{flex: 0.3, marginTop: -10, alignItems: 'center'}}>
+                <Avatar rounded  activeOpacity={0.7} icon={{name: 'user', type: 'font-awesome'}} size='medium'/>
+                <Text>{user.name}</Text>
+                <Text style={{fontWeight: 'bold'}}>Сумма: {user.sum}р</Text>
+              </View> */}
               <Text>{user.name}</Text>
               <Text style={{fontWeight: 'bold'}}>Сумма: {user.sum}р</Text>
             </TouchableOpacity>) }
